@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+<head>
+    <title>Output</title>
+    <style>
+        body {
+            background-image: url(https://media.istockphoto.com/id/1488450586/photo/green-corn-plants-on-a-field.webp?b=1&s=170667a&w=0&k=20&c=UIEIHTMoCouNXvZY0tr1kXtaauWK2TKOq7HP7Seg3uQ=);
+            background-size: cover;
+            background-color: #f0f4f8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        form {
+            background-color: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            width: 90%;
+            max-width: 600px;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+            color: #333;
+            text-align: center;
+        }
+        .highlight-rf, .highlight-dt, .highlight-svm, .highlight-best {
+            font-weight: bold;
+            font-size: 1.5em; /* Increased size for model recommendations */
+        }
+        .highlight-rf {
+            color: #006400; /* Dark green */
+        }
+        .highlight-dt {
+            color: #8B0000; /* Dark red */
+        }
+        .highlight-svm {
+            color: #00008B; /* Dark blue */
+        }
+        .highlight-best {
+            color: chocolate; /* Gold */
+        }
+        h6 {
+            font-size: 1.5em; /* Increased size for the entire text */
+            margin: 10px 0;
+        }
+        h3 {
+            margin: 10px 0;
+            font-size: 1.5em; /* Increased size for headings */
+        }
+    </style>
+</head>
+
+<body>
+    <form>
+        <h2>THE BEST RECOMMENDED CROPS ARE</h2>
+
+        <h6>Random Forest Model suggests: <span class="highlight-rf">{{ rf_crop }}</span> with score: {{ rf_accuracy }}</h6>
+        <h6>Decision Tree Model suggests: <span class="highlight-dt">{{ dt_crop }}</span> with score: {{ dt_accuracy }}</h6>
+        <h6>SVM Model suggests: <span class="highlight-svm">{{ svm_crop }}</span> with score: {{ svm_accuracy }}</h6>
+        <h3>Best recommended crop: <span class="highlight-best">{{ best_crop }}</span></h3>
+        <h3>Best model: <span class="highlight-best">{{ best_model }}</span></h3>
+    </form>
+</body>
+</html>
